@@ -1,3 +1,4 @@
+-- Tested with GHCi 8.0.2
 import Debug.Trace
 
 collatz :: Int -> Int
