@@ -1,3 +1,4 @@
+/* Tested with OpenJDK Runtime Environment Temurin-11.0.12+7 (build 11.0.12+7) */
 public class collatz {
   public static int collatz(int x) {
     System.out.println(x);
