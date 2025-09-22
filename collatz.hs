@@ -1,11 +1,15 @@
 -- Tested with GHCi 8.0.2
-import Debug.Trace
+import System.Environment
 
-collatz :: Int -> Int
-collatz n =
-  let c
-        | (n == 1) = 1
-        | n `mod` 2 == 0 = collatz (n `div` 2)
-        | otherwise = collatz (3 * n + 1)
-  in
-    trace (show n) $ c
+collatz :: Int -> [Int]
+collatz n 
+  | (n == 1) = [1]
+  | n `mod` 2 == 0 = n:collatz (n `div` 2)
+  | otherwise = n:collatz (3 * n + 1)
+
+
+main :: IO ()
+main =
+  do
+    args <- map read <$> getArgs
+    putStrLn $ unlines $ map show $ collatz $ args !! 0
