@@ -44,4 +44,6 @@ After installing all dependencies you can use the `Makefile` to run either each 
 - UIUA
 - Whitespace
 
+You are welcome to create issues/pull requests to add more languages
+
 Copyright (c) 2017-2025 Herbert Lange
