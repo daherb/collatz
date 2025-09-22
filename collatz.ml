@@ -1,4 +1,4 @@
-(* Tested with OCaml 4.04.0 *)
+(* Tested with OCaml version 5.3.0 *)
 let rec collatz n =
   match n with
   | 1 -> 1
