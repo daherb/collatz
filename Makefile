@@ -7,7 +7,7 @@ PARAM=199
 help: ## Show the help prompt.
         @grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-all: aceto erlang forth haskell java lisp ocaml perl prolog python sml
+all: aceto erlang forth haskell java lisp ocaml prolog python sml
 
 aceto: ## Install and run aceto
 	@echo "## Running aceto with $(PARAM)"
@@ -22,11 +22,11 @@ erlang: ## Compile and run erlang code
 forth: ## Run forth code
 	@echo "## Running forth"
 	echo "$(PARAM) collatz bye" | time gforth collatz.fs
-	
+
 haskell: ## Run haskell code
 	@echo "## Running haskell"
 	time runghc collatz.hs $(PARAM)
-	
+
 java: ## Compile and run java code
 	@echo "## Running java"
 	javac *.java
@@ -46,13 +46,13 @@ ocaml: ## Run ocaml code
 
 prolog: ## Run prolog code
 	@echo "## Running prolog"
-	time swipl -l collatz.pl -g 'collatz(199,X), halt.' 	
+	time swipl -l collatz.pl -g "collatz($(PARAM),X), halt."
 
 python: ## Run python code
 	@echo "## Running python"
 	time python collatz_rec.py $(PARAM)
 	time python collatz_iter.py $(PARAM)
-	
+
 sml : ## Run sml code
 	@echo "## Running sml"
 	echo "collatz $(PARAM);" | time smlnj collatz.sml  
@@ -61,4 +61,3 @@ clean: ## Remove all temporary files
 	rm -Rfv env
 	rm -f *.beam
 	rm -f  *.class
-	
