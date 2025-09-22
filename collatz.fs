@@ -1,5 +1,6 @@
 \ Tested in GNU Forth 0.7.3
 : collatz ( n -- collatz n ) recursive
+  cr
   dup .
   dup 1 = if 1
   else
