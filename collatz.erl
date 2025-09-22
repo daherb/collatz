@@ -1,4 +1,4 @@
-% Tested with Erlang/OTP 19
+% Tested with Erlang/OTP 28 [erts-16.0.2] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit:ns]
 -module(collatz).
 -export([collatz/1,run_collatz/1]).
 

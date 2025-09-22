@@ -1,4 +1,4 @@
--- Tested with GHCi 8.0.2
+-- Tested with GHCi 9.4.8
 import System.Environment
 
 collatz :: Int -> [Int]

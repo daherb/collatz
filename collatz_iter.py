@@ -1,4 +1,4 @@
-# Tested with Python 3.9.7 (default, Nov 24 2021, 22:07:03) [GCC 10.3.0] on linux
+# Tested with Python 3.13.7 (main, Aug 15 2025, 12:34:02) [GCC 15.2.1 20250813] on linux
 import sys
 
 def collatz_rec(x):
